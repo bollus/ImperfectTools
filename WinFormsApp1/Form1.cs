@@ -204,12 +204,12 @@ namespace WinFormsApp1
                     p.StartInfo = new ProcessStartInfo("cmd.exe")
                     {
                         RedirectStandardInput = true,
+                        RedirectStandardOutput = true,
                         UseShellExecute = false,
                         WorkingDirectory = @buildToolsFolder,
                         // event handlers for output & error
                         CreateNoWindow = true
                     };
-                    p.OutputDataReceived += p_OutputDataReceived;
                     p.ErrorDataReceived += p_ErrorDataReceived;
                     p.EnableRaisingEvents = true;
                     p.Exited += new EventHandler(p_Process_Exited);
@@ -218,16 +218,16 @@ namespace WinFormsApp1
                     p.Start();
                     // ÷¥––∂‘∆Î√¸¡Ó
                     dqFileName = filenameNoFix + "_dq_" + timeStamp + ".apk";
-                    p.StandardInput.WriteLineAsync("zipalign.exe -f -v 4 " + path + " " + pathNoFileName + dqFileName + " &exit");
-                    p.WaitForExit();
+                    p.StandardInput.WriteLine("zipalign.exe -f -v 4 " + path + " " + pathNoFileName + dqFileName + " & exit");
                     progressBar1.PerformStep();
                     progressBar1.Refresh();
-                    p.Start();
 
                     // ÷¥––«©√˚√¸¡Ó
+                    p.Start();
                     firmFileName = filenameNoFix + "_firm_" + timeStamp + ".apk";
-                    p.StandardInput.WriteLineAsync("apksigner sign --force-stamp-overwrite --ks " + keyStoreFile + " --ks-pass pass:" + keyStorePass + " --in " + pathNoFileName + dqFileName + " --out " + pathNoFileName + firmFileName + " & exit");
-                    p.WaitForExit();
+                    p.StandardInput.WriteLine("apksigner sign --force-stamp-overwrite --ks " + keyStoreFile + " --ks-pass pass:" + keyStorePass + " --in " + pathNoFileName + dqFileName + " --out " + pathNoFileName + firmFileName + " & exit");
+                    // string rst = p.StandardOutput.ReadToEnd();
+                    // Debug.WriteLine(rst);
                     p.Close();
                     progressBar1.PerformStep();
                     progressBar1.Refresh();

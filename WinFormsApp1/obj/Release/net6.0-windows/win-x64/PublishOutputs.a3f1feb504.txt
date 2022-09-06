@@ -1,0 +1,7 @@
+F:\tmp\test\不万能的扳手.pdb
+F:\tmp\test\D3DCompiler_47_cor3.dll
+F:\tmp\test\PenImc_cor3.dll
+F:\tmp\test\PresentationNative_cor3.dll
+F:\tmp\test\vcruntime140_cor3.dll
+F:\tmp\test\wpfgfx_cor3.dll
+F:\tmp\test\不万能的扳手.exe

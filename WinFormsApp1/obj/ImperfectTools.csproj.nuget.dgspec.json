@@ -1,0 +1,88 @@
+{
+  "format": 1,
+  "restore": {
+    "E:\\Projects\\C#\\ImperfectTools\\WinFormsApp1\\ImperfectTools.csproj": {}
+  },
+  "projects": {
+    "E:\\Projects\\C#\\ImperfectTools\\WinFormsApp1\\ImperfectTools.csproj": {
+      "version": "2.2.4",
+      "restore": {
+        "projectUniqueName": "E:\\Projects\\C#\\ImperfectTools\\WinFormsApp1\\ImperfectTools.csproj",
+        "projectName": "不万能的扳手",
+        "projectPath": "E:\\Projects\\C#\\ImperfectTools\\WinFormsApp1\\ImperfectTools.csproj",
+        "packagesPath": "C:\\Users\\Strawberry\\.nuget\\packages\\",
+        "outputPath": "E:\\Projects\\C#\\ImperfectTools\\WinFormsApp1\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Strawberry\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0-windows"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0-windows7.0": {
+            "targetAlias": "net6.0-windows",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0-windows7.0": {
+          "targetAlias": "net6.0-windows",
+          "dependencies": {
+            "BouncyCastle": {
+              "target": "Package",
+              "version": "[1.8.9, )"
+            },
+            "Google.Protobuf": {
+              "target": "Package",
+              "version": "[3.21.5, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
+            "Uno.UI": {
+              "target": "Package",
+              "version": "[4.4.13, )"
+            },
+            "fastJSON": {
+              "target": "Package",
+              "version": "[2.4.0.4, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WindowsForms": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

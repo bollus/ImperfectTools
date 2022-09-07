@@ -131,6 +131,7 @@ namespace WinFormsApp1
             if (p == null)
                 return;
             Console.WriteLine(e.Data);
+            MessageBox.Show(" ß∞‹£∫" + e.Data);
         }
 
         void p_OutputDataReceived(object sender, DataReceivedEventArgs e)
@@ -204,7 +205,7 @@ namespace WinFormsApp1
                     p.StartInfo = new ProcessStartInfo("cmd.exe")
                     {
                         RedirectStandardInput = true,
-                        RedirectStandardOutput = true,
+                        RedirectStandardError = true,
                         UseShellExecute = false,
                         WorkingDirectory = @buildToolsFolder,
                         // event handlers for output & error
@@ -218,14 +219,17 @@ namespace WinFormsApp1
                     p.Start();
                     // ÷¥––∂‘∆Î√¸¡Ó
                     dqFileName = filenameNoFix + "_dq_" + timeStamp + ".apk";
-                    p.StandardInput.WriteLine("zipalign.exe -f -v 4 " + path + " " + pathNoFileName + dqFileName + " & exit");
+                    p.StandardInput.WriteLineAsync("zipalign.exe -f -v 4 " + path + " " + pathNoFileName + dqFileName + " & exit");
+                    p.WaitForExit();
+                    p.Close();
                     progressBar1.PerformStep();
                     progressBar1.Refresh();
 
                     // ÷¥––«©√˚√¸¡Ó
                     p.Start();
                     firmFileName = filenameNoFix + "_firm_" + timeStamp + ".apk";
-                    p.StandardInput.WriteLine("apksigner sign --force-stamp-overwrite --ks " + keyStoreFile + " --ks-pass pass:" + keyStorePass + " --in " + pathNoFileName + dqFileName + " --out " + pathNoFileName + firmFileName + " & exit");
+                    p.StandardInput.WriteLineAsync("apksigner sign --force-stamp-overwrite --ks " + keyStoreFile + " --ks-pass pass:" + keyStorePass + " --in " + pathNoFileName + dqFileName + " --out " + pathNoFileName + firmFileName + " & exit");
+                    p.WaitForExit();
                     // string rst = p.StandardOutput.ReadToEnd();
                     // Debug.WriteLine(rst);
                     p.Close();

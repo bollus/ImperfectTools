@@ -8,7 +8,7 @@
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
     <ApplicationIcon>logo.ico</ApplicationIcon>
-	<Version>2.2.4</Version>
+	<Version>2.2.8</Version>
 	<AssemblyName>不万能的扳手</AssemblyName>
 	<RootNamespace>ImperfectTools</RootNamespace>
 	<SignAssembly>False</SignAssembly>

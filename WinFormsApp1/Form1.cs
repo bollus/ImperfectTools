@@ -41,38 +41,45 @@ namespace WinFormsApp1
             label31.Hide();
             // 异步检查更新
             new Thread(() => {
-                 //网络文件地址
-                 string file_url = @"http://opmain.ca0me1.top:8088/api/public/dl/eAO2_Vkr";
-                 //实例化唯一文件标识
-                 Uri file_uri = new(file_url);
-                //返回文件流
-                HttpClient httpClient = new();
-                HttpResponseMessage response = httpClient.GetAsync(file_uri).Result;
-                Stream stream = response.Content.ReadAsStream();
-                 //实例化文件内容
-                 StreamReader file_content = new StreamReader(stream);
-                 //读取文件内容
-                 string file_content_str = file_content.ReadToEnd();
-
-                // 获取当前版本号
-                string version = Application.ProductVersion;
-                if (!version.Equals(file_content_str))
+                try
                 {
-                    Control owner = new();
-                    owner = this;
-                    while (owner.Parent != null)
+                    //网络文件地址
+                    string file_url = @"http://opmain.ca0me1.top:8088/api/public/dl/eAO2_Vkr";
+                    //实例化唯一文件标识
+                    Uri file_uri = new(file_url);
+                    //返回文件流
+                    HttpClient httpClient = new();
+                    HttpResponseMessage response = httpClient.GetAsync(file_uri).Result;
+                    Stream stream = response.Content.ReadAsStream();
+                    //实例化文件内容
+                    StreamReader file_content = new StreamReader(stream);
+                    //读取文件内容
+                    string file_content_str = file_content.ReadToEnd();
+
+                    // 获取当前版本号
+                    string version = Application.ProductVersion;
+                    if (!version.Equals(file_content_str))
                     {
-                        owner = owner.Parent;
-                    } 
-                    DialogResult dialogResult = MessageBox.Show(owner,"当前版本：" + version + "\n最新版本：" + file_content_str, "有新版本可更新", MessageBoxButtons.OKCancel);
-                    if (dialogResult == DialogResult.OK)
-                    {
-                        Process.Start(new ProcessStartInfo("http://opmain.ca0me1.top:8088/api/public/dl/MKRwq5eF") { UseShellExecute = true });
+                        Control owner = new();
+                        owner = this;
+                        while (owner.Parent != null)
+                        {
+                            owner = owner.Parent;
+                        }
+                        DialogResult dialogResult = MessageBox.Show(owner, "当前版本：" + version + "\n最新版本：" + file_content_str, "有新版本可更新", MessageBoxButtons.OKCancel);
+                        if (dialogResult == DialogResult.OK)
+                        {
+                            Process.Start(new ProcessStartInfo("http://opmain.ca0me1.top:8088/api/public/dl/MKRwq5eF") { UseShellExecute = true });
+                        }
+                        else if (dialogResult == DialogResult.Cancel)
+                        {
+                            return;
+                        }
                     }
-                    else if (dialogResult == DialogResult.Cancel)
-                    {
-                        return;
-                    }
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("更新服务错误:" + e.Data);
                 }
             }).Start();
             new Thread(() => {

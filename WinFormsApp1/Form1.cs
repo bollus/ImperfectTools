@@ -16,7 +16,6 @@ namespace WinFormsApp1
 {
     public partial class Form1 : Form
     {
-        
         List<GoogleAuthenticatorCache> googleAuthenticatorCaches = new();
         GoogleAuthenticator googleAuthenticator = new();
         bool checkOpenSSL = false;

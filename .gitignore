@@ -1,4 +1,9 @@
-﻿.vs
-/WinFormsApp1/.vs
-.idea
-Release
+﻿WinFormsApp1/bin/Debug/*
+WinFormsApp1/bin/Release/*
+WinFormsApp1/bin/Debug
+*.pdb
+*.cache
+WinFormsApp1/bin
+WinFormsApp1/obj
+Release/*
+.vs

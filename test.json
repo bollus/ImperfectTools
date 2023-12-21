@@ -11,8 +11,8 @@
 			"url1": "https://www.hmfun.xyz/q/主播?page={pg}"
 		}
 	],    
-"vod_node":"//main[@class,'page-main']//div[@class,'container']//div[@class,'video-items']//div[contains(@class,'video-img-box')]",
-"vod_info":"//div[@class,'absolute-bottom']//span",
+"vod_node":"//div[contains(@class,'video-img-box')]",
+"vod_info":"//div[@class,'absolute-bottom']/span",
 "vod_score":"",
 "vod_title":"//h6/a",
 "vod_image_id":"//div[@class,'video-img-box']//img/@data-src",
@@ -31,7 +31,7 @@
 "search_flag":true,
 "search_url_first_page":"https://www.hmfun.xyz/q/{wd}",
 "search_url_other_page":"https://www.hmfun.xyz/q/{wd}?page={pg}",
-"search_vod_node":"//main[@class,'page-main']//div[@class,'container']//div[@class,'video-items']//div[contains(@class,'video-img-box')]",
+"search_vod_node":"//div[contains(@class,'video-img-box')]",
 "search_vod_title":"//h6/a",
 "search_vod_image_id":"//div[@class,'video-img-box']//img/@data-src",
 "search_vod_image_regex":"",

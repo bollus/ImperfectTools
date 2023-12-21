@@ -14,7 +14,7 @@
 "vod_node":"//div[contains(@class,'video-img-box')]",
 "vod_info":"//div[@class,'absolute-bottom']/span",
 "vod_score":"",
-"vod_title":"//h6/a",
+"vod_title":"//div[@class='img-box']/a/img/@data-src",
 "vod_image_id":"//div[@class='img-box']/a/img/@data-src",
 "vod_image_regex":"",
 "vod_image_url":"{id}",

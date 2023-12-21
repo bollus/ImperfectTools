@@ -19,7 +19,7 @@
 "vod_image_regex":"",
 "vod_image_url":"{id}",
 "vod_link_id":"//h6/a/@href",
-"vod_link_url":"https://www.hmfun.xyz/{id}",
+"vod_link_url":"//div[@class='img-box']/a/img/@data-src",
 "play_regex":"",
 "play_url":"{id}",
 "playlist_flag":false,
@@ -37,5 +37,5 @@
 "search_vod_image_regex":"",
 "search_vod_image_url":"{id}",
 "search_vod_link_id":"//h6/a/@href",
-"search_vod_link_url":"https://www.hmfun.xyz/{id}"
+"search_vod_link_url":"https://www.hmfun.xyz{id}"
 }
